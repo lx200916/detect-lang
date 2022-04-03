@@ -5,8 +5,11 @@ macro_rules! l {
         ($ext, Language($name, $id))
     };
 }
-
-// The array is sorted by the extension name
+macro_rules! i {
+    ($ext:literal, $name:literal, $id:literal) => {
+        ($id, $ext:literal)
+    };
+}
 pub(crate) const LANGUAGES: [(&str, Language); 58] = [
     l!("bat", "Batch", "batch"),
     l!("c", "C", "c"),
@@ -66,6 +69,67 @@ pub(crate) const LANGUAGES: [(&str, Language); 58] = [
     l!("xml", "XML", "xml"),
     l!("yaml", "YAML", "yaml"),
     l!("yml", "YAML", "yaml"),
+];
+// The array is sorted by the extension name
+pub(crate) const LANGUAGESID: [(&str, Language); 58] = [
+    i!("bat", "Batch", "batch"),
+    i!("c", "C", "c"),
+    i!("cc", "C++", "cpp"),
+    i!("cl", "Common Lisp", "common-lisp"),
+    i!("clj", "Clojure", "clojure"),
+    i!("comp", "GLSL", "glsl"),
+    i!("cpp", "C++", "cpp"),
+    i!("cs", "C#", "csharp"),
+    i!("css", "CSS", "css"),
+    i!("cxx", "C++", "cpp"),
+    i!("dart", "Dart", "dart"),
+    i!("frag", "GLSL", "glsl"),
+    i!("geom", "GLSL", "glsl"),
+    i!("glsl", "GLSL", "glsl"),
+    i!("go", "Go", "go"),
+    i!("h", "C", "c"),
+    i!("haml", "Haml", "haml"),
+    i!("handlebars", "Handlebars", "handlebars"),
+    i!("hbs", "Handlebars", "handlebars"),
+    i!("hlsl", "HLSL", "HLSL"),
+    i!("hpp", "C++", "cpp"),
+    i!("html", "HTML", "html"),
+    i!("hxx", "C++", "cpp"),
+    i!("ini", "INI", "ini"),
+    i!("java", "Java", "java"),
+    i!("jinja", "Jinja", "jinja"),
+    i!("jinja2", "Jinja", "jinja"),
+    i!("js", "JavaScript", "javascript"),
+    i!("json", "JSON", "json"),
+    i!("jsonc", "JSON with Comments", "jsonc"),
+    i!("kt", "Kotlin", "kotlin"),
+    i!("less", "Less", "less"),
+    i!("lua", "Lua", "lua"),
+    i!("md", "Markdown", "markdown"),
+    i!("pl", "Perl", "perl"),
+    i!("py", "Python", "python"),
+    i!("pyc", "Python", "python"),
+    i!("pyo", "Python", "python"),
+    i!("rb", "Ruby", "ruby"),
+    i!("rkt", "Racket", "racket"),
+    i!("rs", "Rust", "rust"),
+    i!("sass", "SASS", "sass"),
+    i!("sc", "Scala", "scala"),
+    i!("scala", "Scala", "scala"),
+    i!("scss", "SCSS", "scss"),
+    i!("sh", "Shell", "shell"),
+    i!("sql", "SQL", "sql"),
+    i!("swift", "Swift", "swift"),
+    i!("tesc", "GLSL", "glsl"),
+    i!("tese", "GLSL", "glsl"),
+    i!("tex", "TeX", "tex"),
+    i!("toml", "TOML", "toml"),
+    i!("ts", "TypeScript", "typescript"),
+    i!("vert", "GLSL", "glsl"),
+    i!("xhtml", "XHTML", "xhtml"),
+    i!("xml", "XML", "xml"),
+    i!("yaml", "YAML", "yaml"),
+    i!("yml", "YAML", "yaml"),
 ];
 
 #[test]

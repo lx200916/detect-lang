@@ -284,3 +284,10 @@ pub fn from_lowercase_extension<S: AsRef<str>>(extension: S) -> Option<Language<
         .ok()
         .map(|i| LANGUAGES[i].1)
 }
+#[inline]
+pub fn from_id<S: AsRef<str>>(extension: S) -> Option<str<'static>> {
+    LANGUAGESID
+        .binary_search_by_key(&extension.as_ref(), |&(ext, _)| ext)
+        .ok()
+        .map(|i| LANGUAGESID[i].1)
+}
