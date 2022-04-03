@@ -95,7 +95,7 @@ use std::path::Path;
 
 mod languages;
 
-use languages::LANGUAGES;
+use languages::*;
 
 /// Languages contain a name and an ID (`Language(name, id)`).
 #[derive(PartialEq, Eq, PartialOrd, Ord, Hash, Clone, Copy, Debug)]
@@ -285,7 +285,7 @@ pub fn from_lowercase_extension<S: AsRef<str>>(extension: S) -> Option<Language<
         .map(|i| LANGUAGES[i].1)
 }
 #[inline]
-pub fn from_id<S: AsRef<str>>(extension: S) -> Option<str<'static>> {
+pub fn from_id<S: AsRef<str>>(extension: S) -> Option<&'static str> {
     LANGUAGESID
         .binary_search_by_key(&extension.as_ref(), |&(ext, _)| ext)
         .ok()

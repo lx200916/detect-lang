@@ -7,7 +7,7 @@ macro_rules! l {
 }
 macro_rules! i {
     ($ext:literal, $name:literal, $id:literal) => {
-        ($id, $ext:literal)
+        ($id, $ext)
     };
 }
 pub(crate) const LANGUAGES: [(&str, Language); 58] = [
@@ -71,7 +71,7 @@ pub(crate) const LANGUAGES: [(&str, Language); 58] = [
     l!("yml", "YAML", "yaml"),
 ];
 // The array is sorted by the extension name
-pub(crate) const LANGUAGESID: [(&str, Language); 58] = [
+pub(crate) const LANGUAGESID: [(&str, &str); 58] = [
     i!("bat", "Batch", "batch"),
     i!("c", "C", "c"),
     i!("cc", "C++", "cpp"),
