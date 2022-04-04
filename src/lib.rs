@@ -286,6 +286,7 @@ pub fn from_lowercase_extension<S: AsRef<str>>(extension: S) -> Option<Language<
 }
 #[inline]
 pub fn from_id<S: AsRef<str>>(extension: S) -> Option<&'static str> {
+    let ext = extension.as_ref().to_ascii_lowercase();
     LANGUAGESID
         .binary_search_by_key(&extension.as_ref(), |&(ext, _)| ext)
         .ok()
